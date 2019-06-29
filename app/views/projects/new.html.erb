@@ -1,0 +1,12 @@
+<%= form_for @project do |f| %>
+  <div id='tasks'>
+    <%= f.fields_for :time_sheets do |task| %>
+      <%= render 'time_sheet_fields', :f => task %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add', f, :time_sheets %>
+    </div>
+  </div>
+  <br>
+  <%= f.submit 'Save' %>
+<% end %>

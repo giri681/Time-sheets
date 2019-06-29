@@ -1,0 +1,18 @@
+<div>
+<table>
+		<tr>
+			<th>Project</th>
+		    <th>Time</th>
+		    <th>Description</th>
+		</tr>
+		<% @time_sheets.each do |t_s| %>
+        <tr>
+        	<%byebug%>
+			<td><%= t_s.project.name %></td>
+			<td><%= t_s.time %></td>
+			<td><%= t_s.description %></td>
+		</tr>
+		<% end %>	
+	</table>
+	<%= link_to "new", new_project_path %>	
+</div>	
